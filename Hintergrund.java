@@ -15,13 +15,17 @@ public class Hintergrund extends JFrame
 
 {
     public int positionen[];
-    Image[] images;
-    
+    JPanel hintergrund;
+    Vector[] positions;
     public Hintergrund(int spieler_anzahl){
         positionen = new int[spieler_anzahl];
-        images = new Image[spieler_anzahl];
+        positions = new Vector[spieler_anzahl];
         
-        JPanel hintergrund = new JPanel(){
+        for(int i = 0; i< spieler_anzahl ; ++i){
+            positions[i] = new Vector(0,0);
+                
+             }
+          hintergrund = new JPanel(){
 
                 @Override
                 protected void paintComponent(Graphics g){
@@ -38,31 +42,30 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     for(int i = 1; i < positionen.length + 1; ++i){
                         try
                         {
                             Image bg = ImageIO.read(getClass().getResource("./spieler " + i + ".png"));
                             bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
-                            g.drawImage(bg,i*25,930,this);
-                            images[i -1] = bg;
+                            g.drawImage(bg,(i-1)*25+5,930,this);
                         }
                         catch (java.io.IOException ioe)
                         {
                             ioe.printStackTrace();
                         }
                     }
-                   /*
+                    /*
                     //Spieler 1
                     try
                     {
-                        Image bg = ImageIO.read(getClass().getResource("./spieler 1.png"));
-                        bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
-                        g.drawImage(bg,5,930,this);
+                    Image bg = ImageIO.read(getClass().getResource("./spieler 1.png"));
+                    bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+                    g.drawImage(bg,5,930,this);
                     }
                     catch (java.io.IOException ioe)
                     {
-                        ioe.printStackTrace();
+                    ioe.printStackTrace();
                     }
                     //brown 1
                     //Ku1*/
@@ -76,7 +79,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //brown 2
                     //Ku2
                     try
@@ -89,7 +92,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //teal 1
                     //Chemie 1
                     try
@@ -102,7 +105,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //teal 2
                     //Chemie 2
                     try
@@ -115,7 +118,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //teal 3
                     //Chemie Übung
                     try
@@ -128,7 +131,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //purple 1
                     //Bio 1
                     try
@@ -141,7 +144,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //purple 2
                     // Bio 2
                     try
@@ -154,7 +157,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //purple 3
                     // Bio Übung
                     try
@@ -167,7 +170,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //orange 1
                     //Goethestrasse
                     try
@@ -180,7 +183,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //orange 2
                     // Uhlandstrasse
                     try
@@ -193,7 +196,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //orange 3
                     // Lessingstrasse
                     try
@@ -206,7 +209,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //red 1
                     // Donaupark
                     try
@@ -219,7 +222,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //red 2
                     // Jahninsel
                     try
@@ -232,7 +235,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //red 3
                     // Stadtpark
                     try
@@ -245,7 +248,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //yellow 1
                     // K08
                     try
@@ -258,7 +261,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //yellow 2
                     // K09
                     try
@@ -271,7 +274,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //yellow 3
                     // K10
                     try
@@ -284,7 +287,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //green 1
                     // Lehrmittelbibliothek
                     try
@@ -297,7 +300,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //green 2
                     // Pausenverkauf
                     try
@@ -310,7 +313,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //green 3
                     // Aula
                     try
@@ -323,7 +326,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //blue 1
                     // Sekretariat
                     try
@@ -336,7 +339,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //blue 2
                     // Direktorat
                     try
@@ -349,7 +352,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //train 1
                     //DEZ
                     try
@@ -374,7 +377,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //train 3
                     //REZ
                     try
@@ -387,7 +390,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //train 4
                     //Arcaden
                     try
@@ -400,7 +403,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //E Werk
                     // Zink
                     try
@@ -413,7 +416,7 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
-                    
+
                     //W Werk
                     // Zink
                     try
@@ -426,58 +429,464 @@ public class Hintergrund extends JFrame
                     {
                         ioe.printStackTrace();
                     }
+
                 };
-                
-            };
-            this.setLayout(null);
-            hintergrund.setLocation(5,5);
-            hintergrund.setSize(1500,1500);
-            this.add(hintergrund);
-            
-            this.setSize(800,800);
-            this.setVisible(true);
+
+                    
+            };     
+        this.setLayout(null);
+        hintergrund.setLocation(5,5);
+        hintergrund.setSize(1500,1500);
+        this.add(hintergrund);
+
+        this.setSize(800,800);
+        this.setVisible(true);
     }
     
-   public void verschieben(int index, int distanz, Graphics g){
-       positionen[index] = (positionen[index] + distanz) % 40;
-       int x = 0;
-       int y = 0;
-       int dir_x = 0;
-       int dir_y = -1;
-       int counter = 0;
-       for(int it = 0; it < positionen[index] ; ++it){
-           if(it % 10 == 0 && it > 0){
-               dir_x = - dir_y;
-               dir_y = 1 - Math.abs(dir_x);
-           }
-           x += dir_x * 80;
-           y += dir_y * 130;
-       }
-       x += 15;
-       x += 40;
-       
-       try
-       {
-           images[index] = ImageIO.read(getClass().getResource("./spieler " + index + ".png"));
-           images[index] = images[index].getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
-           g.drawImage(images[index],x,y,this);
-       }
-       catch (java.io.IOException ioe)
-       {
-          ioe.printStackTrace();
-       }
-       
-       /*try
+            public void verschieben(int index, int distanz){
+
+                positionen[index] = (positionen[index] + distanz) % 40;
+                int x = 0;
+                int y = 0;
+                int dir_x = 0;
+                int dir_y = -1;
+                int counter = 0;
+                for(int it = 0; it < positionen[index] ; ++it){
+                    if(it % 10 == 0 && it > 0){
+                        dir_x = - dir_y;
+                        dir_y = 1 - Math.abs(dir_x);
+                    }
+                    x += dir_x * 80;
+                    y += dir_y * 130;
+                }
+                x += 15;
+                y += 40;
+                positions[index] = new Vector(x,y);
+                
+                 hintergrund = new JPanel(){
+
+                @Override
+                protected void paintComponent(Graphics g){
+
+                    super.paintComponent(g);
+                    //Spielbrett
+                    try
+                    {
+                        Image bg = ImageIO.read(getClass().getResource("./spielbrett.png"));
+                        bg = bg.getScaledInstance(1000, 1000, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bg,0,0,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    for(int i = 1; i < positionen.length + 1; ++i){
+                        try
                         {
-                            Image bg = ImageIO.read(getClass().getResource("./spieler " + index + ".png"));
+                            Image bg = ImageIO.read(getClass().getResource("./spieler " + i + ".png"));
                             bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
-                            g.drawImage(bg,i*25,930,this);
-                            images[i -1] = bg;
+                            g.drawImage(bg,positions[index-1].x,positions[index-1].y,this);
                         }
                         catch (java.io.IOException ioe)
                         {
                             ioe.printStackTrace();
-                        }*/
-   }
+                        }
+                    }
+                    /*
+                    //Spieler 1
+                    try
+                    {
+                    Image bg = ImageIO.read(getClass().getResource("./spieler 1.png"));
+                    bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+                    g.drawImage(bg,5,930,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                    ioe.printStackTrace();
+                    }
+                    //brown 1
+                    //Ku1*/
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./brown 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,0,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //brown 2
+                    //Ku2
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./brown 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,50,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //teal 1
+                    //Chemie 1
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./teal 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180,0,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //teal 2
+                    //Chemie 2
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./teal 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180,50,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //teal 3
+                    //Chemie Übung
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./teal 3.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180,100,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //purple 1
+                    //Bio 1
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./purple 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,150,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //purple 2
+                    // Bio 2
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./purple 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,200,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //purple 3
+                    // Bio Übung
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./purple 3.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,250,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //orange 1
+                    //Goethestrasse
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./orange 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,200,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //orange 2
+                    // Uhlandstrasse
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./orange 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,250,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //orange 3
+                    // Lessingstrasse
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./orange 3.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,300,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //red 1
+                    // Donaupark
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./red 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,350,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //red 2
+                    // Jahninsel
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./red 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,400,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //red 3
+                    // Stadtpark
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./red 3.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,450,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //yellow 1
+                    // K08
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./yellow 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,400,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //yellow 2
+                    // K09
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./yellow 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,450,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //yellow 3
+                    // K10
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./yellow 3.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,500,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //green 1
+                    // Lehrmittelbibliothek
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./green 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,550,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //green 2
+                    // Pausenverkauf
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./green 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,600,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //green 3
+                    // Aula
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./green 3.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,650,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //blue 1
+                    // Sekretariat
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./blue 1.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,650,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //blue 2
+                    // Direktorat
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./blue 2.JPG"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,700,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //train 1
+                    //DEZ
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./train 1.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,800,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+                    //train 2
+                    //KÖWE
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./train 2.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,850,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //train 3
+                    //REZ
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./train 3.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,900,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //train 4
+                    //Arcaden
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./train 4.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1020,950,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //E Werk
+                    // Zink
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./E Werk.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,850,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                    //W Werk
+                    // Zink
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./W Werk.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,900,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+
+                };
+            };
+
+
+        }
+    };
+
+
+
+    
+/*try
+{
+Image bg = ImageIO.read(getClass().getResource("./spieler " + index + ".png"));
+bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+g.drawImage(bg,i*25,930,this);
+images[i -1] = bg;
 }
+catch (java.io.IOException ioe)
+{
+ioe.printStackTrace();
+}*/
 
