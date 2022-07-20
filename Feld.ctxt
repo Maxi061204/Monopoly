@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=Feld
 comment0.text=\r\n\ Abstrakte\ Klasse\ Karte\ \r\n\ \r\n\ @author\ \r\n
-comment1.params=spiel\ name
-comment1.target=Feld(Spiel,\ java.lang.String)
-comment2.params=spieler
-comment2.target=void\ AktionAusfuehren(Spieler)
-numComments=3
+comment1.params=spieler
+comment1.target=void\ AktionAusfuehren(Spieler)
+numComments=2

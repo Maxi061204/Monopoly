@@ -4,28 +4,34 @@
  *  
  * @author 
  */
-public class Einkaufszentrum extends Feld {
+public class Einkaufszentrum extends Property {
     /*---------------Attribute-----*/
-    int preis = 0;
+    int preis = 200;
     boolean verkauft = false;
     Spieler besitzer = null;
-    Straße straße = null;
-    int grundstücksID = 0;
+    boolean hypothek = false;
     private final int basis_miete = 25;
 
     /*---------------Konstruktor---*/
     public Einkaufszentrum(Spiel spiel, String name, Straße straße, int id) {
-        super(spiel, name);
-        this.straße = straße;
-        grundstücksID = id;
+        super(spiel, name, straße, id);
     }
+    
+    public int hypothek_setzen(){
+        hypothek = true;
+        return hypothek_setzen;
+    }
+    
+    public int preis(){return preis;}
+    
+    public int delete_extensions(){return 0;}
     
     public void AktionAusfuehren(Spieler spieler){
         System.out.println("Du bist auf dem" +"Bahnhof gelandet" +"Zahle x&$ an spieler");
         if(spieler == null){
             if(spieler.buy(this)){
                 besitzer = spieler;
-                straße.gekauft(grundstücksID, spieler);
+                straße.gekauft(spieler);
             }
         }
         else{

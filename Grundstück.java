@@ -3,7 +3,7 @@
  *  
  * @author 
  */
-public class Grundstück extends Feld{
+public class Grundstück extends Property{
     /*---------------Attribute----------*/
     int preis;
     int häuser;
@@ -13,149 +13,101 @@ public class Grundstück extends Feld{
     int hypothekenpreis;
     boolean hypothek;
     int index;
-    Straße straße;
-    boolean verkauft;
     int miete;
-    int grundstücksID;
-    Spieler besitzer = null;
     int haeuser_preis;
-
+//Spiel spiel, String name, int preis, int hypothekSetzen, int hypothek_auflösen
     /*---------------Konstruktor---*/
-    public Grundstück(int grundstückID, Spiel spiel, String name, Straße s) {
-        super(spiel, name);
-        straße = s;
+    public Grundstück(int grundstückID, Spiel spiel, String name, Straße s) { 
+        super(spiel, name, s, grundstückID);
         DatenbankManager manager = new DatenbankManager();
         preis = manager.getGrundstückInt(grundstückID, "GrundstückPreis");
         strassenname = manager.getGrundstückString(grundstückID, "GrundstückName");
         hypothekAuflösen = manager.getGrundstückInt(grundstückID, "HypothekAuflösen");
         hypothekenpreis = manager.getGrundstückInt(grundstückID, "Hypothek");
         miete = manager.getGrundstückInt(grundstückID, "GrundstückMiete");
-        grundstücksID = grundstückID;
-
+        
         System.out.println("Du bist auf der Straße '" + strassenname + "' gelandet!");
     }
-
+    
+    public int preis(){return preis;}
+    
+    public int delete_extensions(){
+        int ret = hypothek() + (häuser + ((hotel) ? 1: 0)) * haeuser_preis;
+        häuser = 0;
+        hotel = false;
+        return ret;
+    }
+    
     /*---------------Methoden------*/    
 
     public void AktionAusfuehren(Spieler spieler) {
         if(spieler == null){
             if(spieler.buy(this)){
                 besitzer = spieler;
-                straße.gekauft(grundstücksID, spieler);
+                straße.gekauft(spieler);
             }
         }
-        if(spieler == besitzer){
-            while(spieler.build_extension(this)){
-                if(häuser < 4){
-                    if(spieler.geld() < haeuser_preis){
-                        System.out.println("Nicht genügend Geld");
-                        return;
-                    }else{
-                        spieler.zahlen(haeuser_preis);
+        if(spieler == besitzer)
+        {
+            if(straße.can_extend(besitzer))
+            {
+                while(spieler.build_extension(this, haeuser_preis))
+                {
+                    if(häuser < 4)
+                    {
                         ++häuser;
-                    }
-                }else{
-                    if(spieler.geld() < haeuser_preis){
-                        System.out.println("Nicht genügend Geld");
-                        return;
-                    }else{
-                        spieler.zahlen(haeuser_preis);
+                    }else
+                    {
                         hotel = true;
                     }
                 }
             }
-        }else{
-            spieler.zahlen(mieteBerechnen());
+        }
+        else
+        {
+            if(!hypothek)
+            {
+                spieler.geld_überweisen(besitzer, mieteBerechnen());
+            }
         }
     }
-    
-    private void kaufen(Spieler spieler, int grundstücksID){
-        
-
-
-        
-
-    }
-    
-    
-    
-
-    
-
-    private void miete(Spieler spieler, int grundStücksID){
-
-        // grundstücksID = manager.getGrundstücksID() ...
-        if(verkauft == true && spieler != besitzer){
-            miete = mieteBerechnen();
-            //miete wird vom aktuellen spieler zum besitzer übertragen
-        }
-
-
-    }
-    
-    /*private void mieteBerechnen(int miete, int grundstücksID){
-
-        miete = manager.getGrundstückInt(grundstücksID,  "GrundStückMiete");
-
-
-    }*/
-
-    
-
+ 
 
     private int mieteBerechnen(){
-
         if(hotel){
-            miete = miete*125;
-            return miete;
-        }if(häuser == 4){
-            miete = miete*80;
-            return miete;
-        }if(häuser == 3){
-            miete = miete*45;  
-            return miete;
-        }if(häuser == 2){
-            miete = miete*10;
-            return miete; 
-        }if(häuser == 1){
-            miete = miete*5;
-            return miete;
-        }if(häuser == 0){
-            miete = miete;
+            return miete*125;
+        }
+        if(häuser == 4){
+            return miete*80;
+        }
+        if(häuser == 3){ 
+            return miete*45;
+        }
+        if(häuser == 2){
+            return miete = miete*10; 
+        }
+        if(häuser == 1){
+            return miete * 5;
+        }
+        if(häuser == 0){
             return miete; 
         }
         return -1;
     }
 
-    private void hypothekSetzen(Spieler spieler){
-        if(verkauft == true && spieler != besitzer && hypothek == false){
-            //hypothekenpreis = manager = getHypothekenpreis();
-            hypothek = true; 
-            //spieler bekommt den hypothekenrpreis
-        }
+    public int hypothek_setzen(){
+        hypothek = true;
+        int ret = straße.hypothek_return() + hypothekAuflösen;
+        return ret;
     }
 
-    public void hypothekAuflösen(Spieler spieler){
-        if(verkauft == true && spieler != besitzer && hypothek == true){
-            //hypothekenpreis = manager = getHypothekenpreis();
-            hypothek = false;
-            //spieler muss hypothekenpreis + 10% zahlen
-        }
+    public int hypothek(){return hypothekenpreis;}
+
+    public int hypothek_auflösen(){return hypothekAuflösen;}
+
+    public void hypothekAuflösen(){
+        hypothek = false;
     }
 
-    private void hausBauen(int grundstücksID, int hauspreis, Spieler spieler){
-        
-        if(häuser >= 4) {
-            hotel = true;
-            häuser = 0;
-        }
-        
-        if (hotel){
-            System.out.println("Weiterer Hausbau auf diesem Grundstück nicht möglich!");
-        }
-        häuser++;
-        spieler.zahlen(hauspreis);
-    }
-
-
+    public boolean has_hypothek(){return hypothek;}
 }

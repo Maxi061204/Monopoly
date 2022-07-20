@@ -56,7 +56,7 @@ public abstract class Spieler
         }
     }*/
     
-    public abstract boolean build_extension(Grundstück building);
+    public abstract boolean build_extension(Grundstück building, int price);
     
     public abstract void andere_aktionen();/*{
         if(hypotheken.getFirst() == null){
@@ -71,11 +71,7 @@ public abstract class Spieler
     
     public abstract void zahlen(int preis);
     
-    public abstract boolean buy(Grundstück grundstück);
-    
-    public abstract boolean buy(Kraftwerk kraftwerk);
-    
-    public abstract boolean buy(Einkaufszentrum zentrum);
+    public abstract boolean buy(Property prop);
     
     public void geld_geben(int g){
         geld += g;

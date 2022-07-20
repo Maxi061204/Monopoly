@@ -32,11 +32,11 @@ public class Mensch extends Spieler
         return false;
     }
 
-    public void geld_überweisen(Spieler spieler, int geld){};
+    public void geld_überweisen(Spieler spieler, int geld){}
 
-    public boolean build_extension(Grundstück building){
+    public boolean build_extension(Grundstück building, int geld){
         return false;
-    };
+    }
 
     public void andere_aktionen(){};
 
