@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Grundst\u00FCck
+comment0.text=\r\n\ Klasse\ Grundst\u00FCck.\r\n\ \ \r\n\ @author\ \r\n
+comment1.params=grundst\u00FCckID\ spiel\ name\ s
+comment1.target=Grundst\u00FCck(int,\ Spiel,\ java.lang.String,\ Stra\u00DFe)
+comment1.text=---------------Konstruktor---
+comment2.params=spieler
+comment2.target=void\ AktionAusfuehren(Spieler)
+comment2.text=---------------Methoden------
+comment3.params=spieler\ grundst\u00FCcksID
+comment3.target=void\ kaufen(Spieler,\ int)
+comment4.params=spieler\ grundSt\u00FCcksID
+comment4.target=void\ miete(Spieler,\ int)
+comment5.params=
+comment5.target=int\ mieteBerechnen()
+comment5.text=private\ void\ mieteBerechnen(int\ miete,\ int\ grundst\u00FCcksID){\r\n\r\n\ \ \ \ \ \ \ \ miete\ \=\ manager.getGrundst\u00FCckInt(grundst\u00FCcksID,\ \ "GrundSt\u00FCckMiete");\r\n\r\n\r\n}
+comment6.params=spieler
+comment6.target=void\ hypothekSetzen(Spieler)
+comment7.params=spieler
+comment7.target=void\ hypothekAufl\u00F6sen(Spieler)
+comment8.params=grundst\u00FCcksID\ hauspreis\ spieler
+comment8.target=void\ hausBauen(int,\ int,\ Spieler)
+numComments=9

@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=DatenbankManager
+comment1.params=
+comment1.target=DatenbankManager()
+comment10.params=id\ zahl\ column
+comment10.target=void\ setGrundst\u00FCckInt(int,\ int,\ java.lang.String)
+comment11.params=id\ text\ column
+comment11.target=void\ setGrundst\u00FCckString(int,\ java.lang.String,\ java.lang.String)
+comment12.params=id\ bool\ column
+comment12.target=void\ setGrundst\u00FCckBoolean(int,\ java.lang.Boolean,\ java.lang.String)
+comment2.params=ID\ KartenText\ aktionsID
+comment2.target=void\ addEreignisKarte(int,\ java.lang.String,\ int)
+comment3.params=tabelle\ id
+comment3.target=java.lang.String\ getKartenText(java.lang.String,\ int)
+comment4.params=tabelle\ id
+comment4.target=java.lang.Integer\ getKartenAktionsID(java.lang.String,\ int)
+comment5.params=id\ column
+comment5.target=java.lang.String\ getGrundst\u00FCckString(int,\ java.lang.String)
+comment6.params=id\ column
+comment6.target=java.lang.Integer\ getGrundst\u00FCckInt(int,\ java.lang.String)
+comment7.params=grundst\u00FCckName\ column
+comment7.target=java.lang.Integer\ getGrundst\u00FCckID(java.lang.String,\ java.lang.String)
+comment8.params=id\ zahl\ column
+comment8.target=void\ addGrundst\u00FCckInt(int,\ int,\ java.lang.String)
+comment9.params=id\ zahl\ column
+comment9.target=void\ removeGrundst\u00FCckInt(int,\ int,\ java.lang.String)
+numComments=13

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MySQL
+comment1.params=
+comment1.target=MySQL()
+comment2.params=
+comment2.target=java.util.Properties\ getProperties()
+comment3.params=
+comment3.target=java.sql.Connection\ connect()
+comment4.params=
+comment4.target=void\ close()
+comment5.params=
+comment5.target=java.sql.Connection\ getConnection()
+numComments=6

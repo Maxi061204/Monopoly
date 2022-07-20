@@ -1,0 +1,17 @@
+#Wed Jul 20 11:12:12 CEST 2022
+bluej.teamsettings.ignore1=.*\\.class
+bluej.teamsettings.yourName=Thomas
+bluej.teamsettings.git.server=10.102.8.70
+bluej.teamsettings.yourEmail=benutzer.schule@wraziofh.de
+bluej.teamsettings.git.repositoryPrefix=/home/git/monopoly.git
+bluej.teamsettings.vcs=git
+bluej.teamsettings.user=git
+bluej.teamsettings.ignore3=team\\.defs
+bluej.teamsettings.ignore2=bluej\\.pkh
+bluej.teamsettings.ignore5=.*\\~
+bluej.teamsettings.git.branch=
+bluej.teamsettings.ignore4=.*\\.ctxt
+bluej.teamsettings.ignore7=.*\\\#backup
+bluej.teamsettings.ignore6=.*\\\#
+bluej.teamsettings.git.protocol=ssh
+bluej.teamsettings.ignore8=\\.DS_Store

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Ereigniskarte
+comment0.text=\r\n\ Klasse\ Ereigniskarte.\r\n\ \ \r\n\ @author\ \r\n
+comment1.params=
+comment1.target=Ereigniskarte()
+comment1.text=---------------Konstruktor---
+comment2.params=spieler
+comment2.target=int\ AktionAusfuehren(Spieler)
+comment2.text=---------------Methoden------
+comment3.params=spieler\ zahl
+comment3.target=int\ EreigniskarteZiehen(Spieler,\ int)
+comment4.params=
+comment4.target=void\ EreigniskarteZiehen()
+numComments=5

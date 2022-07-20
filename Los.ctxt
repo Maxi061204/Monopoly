@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Los
+comment0.text=\r\n\ Klasse\ Los.\r\n\ \ \r\n\ @author\ \r\n
+comment1.params=
+comment1.target=Los()
+comment1.text=---------------Konstruktor---
+comment2.params=spieler
+comment2.target=void\ AktionAusfuehren(Spieler)
+numComments=3

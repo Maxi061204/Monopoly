@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Stra\u00DFe
+comment1.params=groe\u00DFe
+comment1.target=Stra\u00DFe(int)
+comment2.params=i\ spieeler
+comment2.target=void\ gekauft(int,\ Spieler)
+comment3.params=
+comment3.target=boolean\ stra\u00DFe_komplett()
+comment4.params=spieler
+comment4.target=int\ count(Spieler)
+comment5.params=
+comment5.target=Spieler\ stra\u00DFe_geh\u00F6rt()
+numComments=6

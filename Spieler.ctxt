@@ -1,0 +1,43 @@
+#BlueJ class context
+comment0.target=Spieler
+comment1.params=geld\ spiel\ name
+comment1.target=Spieler(int,\ Spiel,\ java.lang.String)
+comment10.params=zentrum
+comment10.target=boolean\ buy(Einkaufszentrum)
+comment11.params=g
+comment11.target=void\ geld_geben(int)
+comment12.params=geld
+comment12.target=void\ in_frei_parken_zahlen(int)
+comment13.params=
+comment13.target=int\ geld()
+comment14.params=
+comment14.target=void\ gefaengnis_frei()
+comment15.params=
+comment15.target=Feld\ get_estate()
+comment16.params=est
+comment16.target=int\ get_fee(Feld)
+comment17.params=grundst\u00FCck\ p1\ p2\ price
+comment17.target=void\ handeln(Grundst\u00FCck,\ Spieler,\ Spieler,\ int)
+comment18.params=wer\ wo\ wieviel
+comment18.target=boolean\ handeln_consent_KW(Spieler,\ Feld,\ int)
+comment19.params=feld
+comment19.target=void\ add_property(Feld)
+comment2.params=
+comment2.target=int[]\ wuerfeln()
+comment3.params=spieler\ geld
+comment3.target=void\ geld_\u00FCberweisen(Spieler,\ int)
+comment4.params=building
+comment4.target=boolean\ build_extension(Grundst\u00FCck)
+comment4.text=public\ void\ aktion_uebergeben(int\ action_id){\ //F\u00FCr\ Felder\r\n\ \ \ \ \ \ \ \ //Einfach\ Geld\ geben\ oder\ \u00FCberweisen\ haben\ eigene\ Methoden(s.u.)\r\n\ \ \ \ \ \ \ \ switch(action_id){\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 1\:\ action_id\ \=\ 0;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //Geld\ zu\ frei\ parken\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 2\:\ action_id\ \=\ 1;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //anderem\ spieler\ geld\ \u00FCberweisen\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 3\:\ action_id\ \=\ 2;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //haus_hotel\ bauen?\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 4\:\ \r\n\ \ \ \ \ \ \ \ }\r\n}
+comment5.params=
+comment5.target=void\ andere_aktionen()
+comment6.params=angebot\ geld
+comment6.target=void\ angebot_unterbreiten(Feld,\ int)
+comment6.text={\r\n\ \ \ \ \ \ \ \ if(hypotheken.getFirst()\ \=\=\ null){\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Welches\ Objekt\ wollen\ Sie\ von\ einem\ anderen\ Spieler\ erwerben?");\r\n\ \ \ \ \ \ \ \ \ \ \ \ Feld\ estate\ \=\ get_estate();\r\n\ \ \ \ \ \ \ \ \ \ \ \ estate.besitzer.angebot_unterbreiten(estate,\ get_fee(estate));\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ System.out.println("M\u00F6chten\ Sie");//not\ finished\r\n}
+comment7.params=preis
+comment7.target=void\ zahlen(int)
+comment8.params=grundst\u00FCck
+comment8.target=boolean\ buy(Grundst\u00FCck)
+comment9.params=kraftwerk
+comment9.target=boolean\ buy(Kraftwerk)
+numComments=20

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Spielbrett
+comment1.params=anzahlSpieler\ spiel
+comment1.target=Spielbrett(int,\ Spiel)
+comment2.params=positionen\ namen
+comment2.target=void\ init_grund(int[],\ java.lang.String[])
+comment3.params=spieler
+comment3.target=void\ next_train_station(Spieler)
+comment4.params=distanz\ spieler
+comment4.target=void\ verschieben(int,\ Spieler)
+comment5.params=spieler
+comment5.target=void\ send_to_prison(Spieler)
+comment6.params=spieler
+comment6.target=void\ frei_parken(Spieler)
+comment7.params=geld
+comment7.target=void\ geld_zu_frei_parken(int)
+comment8.params=spieler
+comment8.target=void\ auf_los(Spieler)
+numComments=9

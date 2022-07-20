@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Einkaufszentrum
+comment0.text=\r\n\ Klasse\ Einkaufszentrum.\r\n\ \ \r\n\ @author\ \r\n
+comment1.params=besitzer\ stra\u00DFe\ id
+comment1.target=Einkaufszentrum(Spieler,\ Stra\u00DFe,\ int)
+comment1.text=---------------Konstruktor---
+comment2.params=spieler
+comment2.target=void\ AktionAusfuehren(Spieler)
+comment3.params=
+comment3.target=int\ mieteBerechnen()
+comment3.text=---------------Methoden------
+comment4.params=basis\ exponent
+comment4.target=int\ pow(int,\ int)
+comment4.text=\r\n\ \ \ \ \ \ \ 25\r\n\ \ \ \ \ \ \ 50\r\n\ \ \ \ \ \ \ 100\r\n
+numComments=5

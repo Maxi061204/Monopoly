@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=DiceD6
+comment1.params=
+comment1.target=DiceD6()
+comment1.text=---------------Konstruktor---
+comment2.params=
+comment2.target=void\ wuerfeln()
+comment2.text=---------------Methoden------
+comment3.params=wuerfel1\ wuerfel2
+comment3.target=boolean\ pasch(int,\ int)
+numComments=4

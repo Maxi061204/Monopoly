@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Ereignisfeld
+comment0.text=\r\n\ Klasse\ Ereignisfeld.\r\n\ \ \r\n\ @author\ \r\n
+comment1.params=
+comment1.target=Ereignisfeld()
+comment1.text=---------------Konstruktor---
+comment2.params=spieler
+comment2.target=void\ AktionAusfuehren(Spieler)
+numComments=3

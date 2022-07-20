@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Spiel
+comment1.params=namen
+comment1.target=Spiel(java.lang.String[])
+comment2.params=
+comment2.target=void\ next_circle()
+comment3.params=spieler
+comment3.target=void\ send_to_prison(Spieler)
+comment4.params=
+comment4.target=void\ loop()
+comment4.text=Zeile\ \=\ index\ /\ 5\ (int)\r\nSpalte\ \=
+comment5.params=geld
+comment5.target=void\ in_frei_parken_zahlen(int)
+comment5.text=\r\n\ \ \ \ public\ boolean\ get_player_input(){\r\n\ \ \ \ return\ spieler[an_der_reihe].do_action();\r\n\ \ \ \ }\r\n
+comment6.params=spieler
+comment6.target=void\ frei_parken(Spieler)
+comment7.params=spieler
+comment7.target=void\ next_train_station(Spieler)
+comment8.params=spieler
+comment8.target=void\ auf_los(Spieler)
+numComments=9
