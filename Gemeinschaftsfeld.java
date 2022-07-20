@@ -9,12 +9,13 @@ public class Gemeinschaftsfeld extends Feld {
 
 
     /*---------------Konstruktor---*/
-    public Gemeinschaftsfeld() {
+    public Gemeinschaftsfeld(Spiel spiel, String name) {
+        super(spiel, name);
     }
      public void AktionAusfuehren(Spieler spieler){
         Gemeinschaftskarte g = new Gemeinschaftskarte();
          System.out.println("Du ziehst eine Gemeinschatskarte");
-        int id = g.AktionAusfuehren(spieler);
+        int id = g.ziehen();
         switch(id){
             case 0:
                 //bekommt geld

@@ -8,7 +8,8 @@ public class Frei_Parken extends Feld {
     /*---------------Attribute-----*/
 
     /*---------------Konstruktor---*/
-    public Frei_Parken() {
+    public Frei_Parken(Spiel spiel, String name) {
+        super(spiel, name);
     }
     public void AktionAusfuehren(Spieler spieler){
         spiel.frei_parken(spieler);

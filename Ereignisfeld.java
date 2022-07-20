@@ -9,12 +9,13 @@ public class Ereignisfeld extends Feld {
 
 
     /*---------------Konstruktor---*/
-    public Ereignisfeld() {
+    public Ereignisfeld(Spiel spiel, String name) {
+        super(spiel, name);
     }
      public void AktionAusfuehren(Spieler spieler){
         Ereigniskarte e = new Ereigniskarte();
         System.out.println("Du ziehst eine Ereigniskarte");
-        int id = e.AktionAusfuehren(spieler);
+        int id = e.ziehen();
         switch(id){
             case 0:
                 //bekommt geld

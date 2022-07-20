@@ -16,14 +16,15 @@ public class Gemeinschaftskarte extends Karte{
     }
 
     /*---------------Methoden------*/    
-    public int AktionAusfuehren(Spieler spieler) {
+    public int ziehen() {
         int randomZahl = new Random().nextInt(kartenAnzahl);
-        return GemeinschaftskarteZiehen(spieler, randomZahl);
+        return GemeinschaftskarteZiehen(randomZahl);
     }
 
     //Gemeinschaftsfeld/Ereignisfeld: karteziehen  bekommt Geld / muss geld zahlen / muss auf anderes Feld / bekommt ausgefängnisfrei karte / andere Spieler bekommen geld oder müs
     
-    private int GemeinschaftskarteZiehen(Spieler spieler, int zahl){
+    
+    private int GemeinschaftskarteZiehen(int zahl){
         String karte = manager.getKartenText("Gemeinschaftskarten", zahl);
         int aktionsID = manager.getKartenAktionsID("Gemeinschaftskarten", zahl);
         System.out.println("Gemeinschaftskarte Text: " + karte);

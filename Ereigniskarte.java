@@ -16,14 +16,14 @@ public class Ereigniskarte extends Karte{
     }
 
    
-    public int AktionAusfuehren(Spieler spieler) {
+    public int ziehen() {
         int randomZahl = new Random().nextInt(kartenAnzahl);
-        int id = EreigniskarteZiehen(spieler, randomZahl);
+        int id = EreigniskarteZiehen(randomZahl);
         
         return id;
     }
     
-    private int EreigniskarteZiehen(Spieler spieler, int zahl) {
+    private int EreigniskarteZiehen(int zahl) {
         String kartenText = manager.getKartenText("Ereigniskarten", zahl);
         int aktionsID = manager.getKartenAktionsID("Ereigniskarten", zahl);
         System.out.println("Ereigniskarte Text: " + kartenText);

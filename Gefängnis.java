@@ -9,7 +9,8 @@ public class Gefängnis extends Feld {
 
 
     /*---------------Konstruktor---*/
-    public Gefängnis() {
+    public Gefängnis(Spiel spiel, String name) {
+        super(spiel, name);
     }
      public void AktionAusfuehren(Spieler spieler){
         spiel.send_to_prison(spieler);

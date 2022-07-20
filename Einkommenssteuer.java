@@ -8,7 +8,8 @@ public class Einkommenssteuer extends Feld {
     /*---------------Attribute-----*/
 
     /*---------------Konstruktor---*/
-    public Einkommenssteuer() {
+    public Einkommenssteuer(Spiel spiel, String name) {
+        super(spiel, name);
     }
 
     public void AktionAusfuehren(Spieler spieler){

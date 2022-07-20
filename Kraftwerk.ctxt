@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Kraftwerk
 comment0.text=\r\n\ Klasse\ Kraftwerk.\r\n\ \ \r\n\ @author\ \r\n
-comment1.params=
-comment1.target=Kraftwerk()
+comment1.params=spiel\ name\ id\ stra\u00DFe
+comment1.target=Kraftwerk(Spiel,\ java.lang.String,\ int,\ Stra\u00DFe)
 comment1.text=---------------Konstruktor---
 comment2.params=spieler
 comment2.target=void\ AktionAusfuehren(Spieler)
-comment3.params=
-comment3.target=int\ miete()
+comment3.params=spieler
+comment3.target=int\ miete(Spieler)
 comment3.text=---------------Methoden------
 numComments=4

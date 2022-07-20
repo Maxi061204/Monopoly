@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Einkaufszentrum
 comment0.text=\r\n\ Klasse\ Einkaufszentrum.\r\n\ \ \r\n\ @author\ \r\n
-comment1.params=besitzer\ stra\u00DFe\ id
-comment1.target=Einkaufszentrum(Spieler,\ Stra\u00DFe,\ int)
+comment1.params=spiel\ name\ stra\u00DFe\ id
+comment1.target=Einkaufszentrum(Spiel,\ java.lang.String,\ Stra\u00DFe,\ int)
 comment1.text=---------------Konstruktor---
 comment2.params=spieler
 comment2.target=void\ AktionAusfuehren(Spieler)

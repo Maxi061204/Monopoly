@@ -6,6 +6,7 @@ import java.io.Console;
 public abstract class Spieler
 {
     public int position = 0;
+    public int letzter_wurf = 0;
    private int geld;
    private Spiel spiel;
    public int counter = 0;

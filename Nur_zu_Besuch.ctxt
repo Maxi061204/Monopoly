@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Nur_zu_Besuch
+comment0.text=\r\n\ Klasse\ Nur_zuBesuch.\r\n\ \ \r\n\ @author\ \r\n
+comment1.params=spiel\ name
+comment1.target=Nur_zu_Besuch(Spiel,\ java.lang.String)
+comment1.text=---------------Konstruktor---
+comment2.params=spieler
+comment2.target=void\ AktionAusfuehren(Spieler)
+numComments=3

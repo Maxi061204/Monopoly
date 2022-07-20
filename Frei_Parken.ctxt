@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Frei_Parken
 comment0.text=\r\n\ Klasse\ Frei_Parken.\r\n\ \ \r\n\ @author\ \r\n
-comment1.params=
-comment1.target=Frei_Parken()
+comment1.params=spiel\ name
+comment1.target=Frei_Parken(Spiel,\ java.lang.String)
 comment1.text=---------------Konstruktor---
 comment2.params=spieler
 comment2.target=void\ AktionAusfuehren(Spieler)

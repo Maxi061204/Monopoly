@@ -6,14 +6,15 @@
  */
 public class Kraftwerk extends Feld {
     /*---------------Attribute-----*/
-    private Spieler besitzer;
-    private int index_in_straße;
-    private int miete;
-    private Straße straße;
+    private Spieler besitzer = null;
+    private int index_in_straße = 0;
+    private Straße straße = null;
 
     /*---------------Konstruktor---*/
-    public Kraftwerk() {
-        
+    public Kraftwerk(Spiel spiel, String name, int id, Straße straße) {
+        super(spiel, name);
+        index_in_straße = id;
+        this.straße = straße;
     }
     
     public void AktionAusfuehren(Spieler spieler){
@@ -23,15 +24,20 @@ public class Kraftwerk extends Feld {
                 besitzer = spieler;
                 straße.gekauft(index_in_straße, spieler);
             }
-        }
-        if(besitzer != spieler){
-            spieler.zahlen(miete());
+        }else{
+            if(besitzer != spieler){
+                spieler.zahlen(miete(spieler));
+            }
         }
     }
 
     /*---------------Methoden------*/    
 
-    private int miete(){
-        return straße.count(besitzer) *  miete;
+    private int miete(Spieler spieler){
+        int c = straße.count(spieler);
+        if(c == 1){
+            return 4 * spieler.letzter_wurf;
+        }
+        return 10 * spieler.letzter_wurf;
     }
 }

@@ -6,16 +6,16 @@
  */
 public class Einkaufszentrum extends Feld {
     /*---------------Attribute-----*/
-    int preis;
-    boolean verkauft;
-    Spieler besitzer;
-    Straße straße;
-    int grundstücksID;
+    int preis = 0;
+    boolean verkauft = false;
+    Spieler besitzer = null;
+    Straße straße = null;
+    int grundstücksID = 0;
     private final int basis_miete = 25;
 
     /*---------------Konstruktor---*/
-    public Einkaufszentrum(Spieler besitzer, Straße straße, int id) {
-        this.besitzer = besitzer;
+    public Einkaufszentrum(Spiel spiel, String name, Straße straße, int id) {
+        super(spiel, name);
         this.straße = straße;
         grundstücksID = id;
     }

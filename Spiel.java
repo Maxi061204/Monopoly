@@ -41,11 +41,10 @@ public class Spiel
 
             ++an_der_reihe;
             --aktuell.muss_aussetzen;
-            aktuell = spieler[an_der_reihe];
+            aktuell = spieler[an_der_reihe % spieler.length];
         }
 
         int[] w = aktuell.wuerfeln();
-        boolean pasch = false;
 
         if(w[0] == w[1]){
             ++aktuell.counter;
@@ -55,12 +54,15 @@ public class Spiel
                 ++an_der_reihe;
                 return ;
             }
-            pasch = true;
+        }else{
+            aktuell.counter = 0;
+            ++an_der_reihe;
         }
+        
+        aktuell.letzter_wurf = w[0] + w[1];
+        brett.verschieben(aktuell.letzter_wurf, aktuell);
 
-        brett.verschieben(w[0] + w[1], aktuell);
-
-        an_der_reihe += 1 - ((pasch) ? 1: 0);
+        //an_der_reihe += 1 - ((pasch) ? 1: 0);
         
         
     }
