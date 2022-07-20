@@ -24,11 +24,15 @@ public abstract class Property extends Feld
     
     public abstract int hypothek();
     
+    public String name(){return name;}
+    
     public abstract int hypothek_auflösen();
     
     public abstract void hypothekAuflösen();
     
     public abstract int hypothek_setzen();
+    
+    public abstract void set_besitzer(Spieler neuerBesitzer);
     
     public abstract int preis();
     

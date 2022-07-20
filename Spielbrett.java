@@ -55,6 +55,15 @@ public class Spielbrett
     }
     
     
+    public Property get_prop(String name){
+        for(Feld f : felder){
+            if(f.name.equals(name) && f instanceof Property){
+                return (Property)f;
+            }
+        }
+        return null;
+    }
+    
     private void init_grund(int pos1, int pos2, int pos3, String n1, String n2, String n3){
         Straße s = new Straße(3);
         felder[pos1] = new Grundstück(0, spiel, n1, s);

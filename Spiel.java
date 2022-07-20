@@ -30,6 +30,19 @@ public class Spiel
         }
     }
 
+    public Property get_prop(String name){
+        return brett.get_prop(name);
+    }
+    
+    public Spieler get_spieler(String name){
+        for(Spieler s : spieler){
+            if(s.name().equals(name)){
+                return s;
+            }
+        }
+        return null;
+    }
+    
     private void next_circle(){
         Spieler aktuell = spieler[an_der_reihe%spieler.length];
         while(aktuell.muss_aussetzen > 0){

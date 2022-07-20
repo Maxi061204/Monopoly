@@ -6,7 +6,7 @@
 public class Grundstück extends Property{
     /*---------------Attribute----------*/
     int preis;
-    int häuser;
+    public int häuser;
     String strassenname;
     boolean hotel;
     int hypothekAuflösen;
@@ -14,7 +14,7 @@ public class Grundstück extends Property{
     boolean hypothek;
     int index;
     int miete;
-    int haeuser_preis;
+    public int haeuser_preis;
 //Spiel spiel, String name, int preis, int hypothekSetzen, int hypothek_auflösen
     /*---------------Konstruktor---*/
     public Grundstück(int grundstückID, Spiel spiel, String name, Straße s) { 
@@ -32,10 +32,18 @@ public class Grundstück extends Property{
     public int preis(){return preis;}
     
     public int delete_extensions(){
-        int ret = hypothek() + (häuser + ((hotel) ? 1: 0)) * haeuser_preis;
+        int ret = hypothek();
         häuser = 0;
         hotel = false;
         return ret;
+    }
+    
+    public void set_besitzer(Spieler neuerBesitzer){
+        int ret = hypothek();
+        häuser = 0;
+        hotel = false;
+        besitzer = neuerBesitzer;
+        straße.gekauft(besitzer);
     }
     
     /*---------------Methoden------*/    

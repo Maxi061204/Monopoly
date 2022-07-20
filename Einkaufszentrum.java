@@ -10,12 +10,22 @@ public class Einkaufszentrum extends Property {
     boolean verkauft = false;
     Spieler besitzer = null;
     boolean hypothek = false;
+    private final int hypothek_setzen = 150;
+    private final int hypothek_auflösen = 150;
     private final int basis_miete = 25;
 
     /*---------------Konstruktor---*/
     public Einkaufszentrum(Spiel spiel, String name, Straße straße, int id) {
         super(spiel, name, straße, id);
     }
+    
+    public boolean has_hypothek(){return hypothek;}
+    
+    public void hypothekAuflösen(){hypothek = false;}
+    
+    public int hypothek(){return 150;}
+    
+    public int hypothek_auflösen(){return hypothek_auflösen;}
     
     public int hypothek_setzen(){
         hypothek = true;
@@ -38,7 +48,12 @@ public class Einkaufszentrum extends Property {
             spieler.zahlen(mieteBerechnen());
         }
         }
-
+        
+    public void set_besitzer(Spieler neuerBesitzer){
+        besitzer = neuerBesitzer;
+        straße.gekauft(besitzer);
+    }    
+    
     /*---------------Methoden------*/    
     
     

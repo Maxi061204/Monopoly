@@ -17,6 +17,11 @@ public class Kraftwerk extends Property {
         super(spiel, name, straße, id);
     }
     
+    public void set_besitzer(Spieler neuerBesitzer){
+        besitzer = neuerBesitzer;
+        straße.gekauft(besitzer);
+    }    
+    
     public int hypothek(){return 100;}
     
     //public void hypothek_setzen()

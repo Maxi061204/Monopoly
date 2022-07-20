@@ -11,10 +11,10 @@ public abstract class Spieler
    private Spiel spiel;
    public int counter = 0;
    public int muss_aussetzen = 0;
-   private LinkedList<Grundstück> hypotheken = new LinkedList<Grundstück>();
-   private ArrayList<Feld> besitz = new ArrayList<Feld>();
+   private LinkedList<Property> hypotheken = new LinkedList<Property>();
+   private ArrayList<Property> besitz = new ArrayList<Property>();
    public int gefaengnis_frei = 0;
-   public String name;
+   private String name;
    //
    
    //int[][] grundstuecke = new int[][]
@@ -26,6 +26,8 @@ public abstract class Spieler
         this.name = name;
     }
     
+    public String name(){return name;}
+    
     //public abstract boolean do_action();
     
     public int[] wuerfeln(){
@@ -35,7 +37,6 @@ public abstract class Spieler
      ergebnisse[0]=n;
      ergebnisse[1]=m;
      return ergebnisse;
-     
     }
     //f
     
@@ -58,6 +59,8 @@ public abstract class Spieler
     
     public abstract boolean build_extension(Grundstück building, int price);
     
+   
+    
     public abstract void andere_aktionen();/*{
         if(hypotheken.getFirst() == null){
             System.out.println("Welches Objekt wollen Sie von einem anderen Spieler erwerben?");
@@ -67,14 +70,71 @@ public abstract class Spieler
         System.out.println("Möchten Sie");//not finished
     }*/
     
-    public abstract void angebot_unterbreiten(Feld angebot, int geld);
+    public void angebot_unterbreiten(Property angebot, int geld, Spieler wer){
+        System.out.println("Wollen Sie " + angebot.name()+ " für " + geld + " verkaufen?");
+        if(do_action()){
+            wer.geld_überweisen(this, geld);
+            
+        }
+    }
     
     public abstract void zahlen(int preis);
     
     public abstract boolean buy(Property prop);
     
+    private void handeln(){
+        Property prop = null;
+        do{
+            System.out.println("Wollen Sie handeln?");
+            if(!do_action()){
+                return;
+            }
+            String s = get_desired_property();
+            prop = spiel.get_prop(s);
+        }while(prop == null || !can_afford(prop.preis()));
+        
+        prop.besitzer().angebot_unterbreiten(prop, offer(prop), this);
+    }
+    
+    public void add_prop(Property prop){
+        besitz.add(prop);
+        prop.set_besitzer(this);
+    }
+    
+    
+    public abstract int offer(Property prop);
+    
+    private boolean can_afford(int moneten){
+        int wealth = geld;
+        int counter = 0;
+        do{
+            if(wealth >= moneten){
+                return true;
+            }
+            Property prop = besitz.get(counter);
+            wealth += prop.hypothek();
+            
+            ++counter;
+        }while(counter < besitz.size());
+        
+        return false;
+    }
+    
+    public abstract boolean do_action();
+    
+    public abstract String get_desired_property();
+    
     public void geld_geben(int g){
         geld += g;
+    }
+    
+    public Property get_prop(String n){
+        for(Property p : besitz){
+            if(p.name().equals(n)){
+                return p;
+            }
+        }
+        return null;
     }
     
     public abstract void in_frei_parken_zahlen(int geld);
@@ -83,15 +143,7 @@ public abstract class Spieler
     
     public void gefaengnis_frei(){++ gefaengnis_frei;}
     
-    public abstract Feld get_estate();
-    public abstract int get_fee(Feld est);
-    
     public void handeln(Grundstück grundstück, Spieler p1, Spieler p2, int price){
-    //p1 verkauft an p2 :)))))
-    /*if(kill me)
-    grundstück.besitzer=p2;
-    p2.zahlen(price);
-    p1.geld_geben(price);*/
     
     
     }
@@ -108,7 +160,4 @@ public abstract class Spieler
         return false;
     }
     
-    public void add_property(Feld feld){
-        //Nicht fertig
-    }
 }
