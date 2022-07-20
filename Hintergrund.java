@@ -14,8 +14,13 @@ import javax.imageio.ImageIO;
 public class Hintergrund extends JFrame
 
 {
-
-    public Hintergrund(){    
+    public int positionen[];
+    Image[] images;
+    
+    public Hintergrund(int spieler_anzahl){
+        positionen = new int[spieler_anzahl];
+        images = new Image[spieler_anzahl];
+        
         JPanel hintergrund = new JPanel(){
 
                 @Override
@@ -34,8 +39,20 @@ public class Hintergrund extends JFrame
                         ioe.printStackTrace();
                     }
                     
-                    
-                   
+                    for(int i = 1; i < positionen.length + 1; ++i){
+                        try
+                        {
+                            Image bg = ImageIO.read(getClass().getResource("./spieler " + i + ".png"));
+                            bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+                            g.drawImage(bg,i*25,930,this);
+                            images[i -1] = bg;
+                        }
+                        catch (java.io.IOException ioe)
+                        {
+                            ioe.printStackTrace();
+                        }
+                    }
+                   /*
                     //Spieler 1
                     try
                     {
@@ -48,7 +65,7 @@ public class Hintergrund extends JFrame
                         ioe.printStackTrace();
                     }
                     //brown 1
-                    //Ku1
+                    //Ku1*/
                     try
                     {
                         Image bag = ImageIO.read(getClass().getResource("./brown 1.JPG"));
@@ -420,5 +437,47 @@ public class Hintergrund extends JFrame
             this.setSize(800,800);
             this.setVisible(true);
     }
+    
+   public void verschieben(int index, int distanz, Graphics g){
+       positionen[index] = (positionen[index] + distanz) % 40;
+       int x = 0;
+       int y = 0;
+       int dir_x = 0;
+       int dir_y = -1;
+       int counter = 0;
+       for(int it = 0; it < positionen[index] ; ++it){
+           if(it % 10 == 0 && it > 0){
+               dir_x = - dir_y;
+               dir_y = 1 - Math.abs(dir_x);
+           }
+           x += dir_x * 80;
+           y += dir_y * 130;
+       }
+       x += 15;
+       x += 40;
+       
+       try
+       {
+           images[index] = ImageIO.read(getClass().getResource("./spieler " + index + ".png"));
+           images[index] = images[index].getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+           g.drawImage(images[index],x,y,this);
+       }
+       catch (java.io.IOException ioe)
+       {
+          ioe.printStackTrace();
+       }
+       
+       /*try
+                        {
+                            Image bg = ImageIO.read(getClass().getResource("./spieler " + index + ".png"));
+                            bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+                            g.drawImage(bg,i*25,930,this);
+                            images[i -1] = bg;
+                        }
+                        catch (java.io.IOException ioe)
+                        {
+                            ioe.printStackTrace();
+                        }*/
+   }
 }
 

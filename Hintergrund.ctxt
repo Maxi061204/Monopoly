@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Hintergrund
-comment1.params=
-comment1.target=Hintergrund()
+comment1.params=spieler_anzahl
+comment1.target=Hintergrund(int)
 comment2.params=g
 comment2.target=void\ paintComponent(java.awt.Graphics)
-numComments=3
+comment3.params=index\ distanz\ g
+comment3.target=void\ verschieben(int,\ int,\ java.awt.Graphics)
+numComments=4
