@@ -34,6 +34,8 @@ public class Hintergrund extends JFrame
                         ioe.printStackTrace();
                     }
                     
+                    
+                   
                     //Spieler 1
                     try
                     {
