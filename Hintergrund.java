@@ -39,7 +39,7 @@ public class Hintergrund extends JFrame
                     {
                         Image bg = ImageIO.read(getClass().getResource("./spieler 1.png"));
                         bg = bg.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
-                        g.drawImage(bg,0,990,this);
+                        g.drawImage(bg,5,930,this);
                     }
                     catch (java.io.IOException ioe)
                     {
@@ -382,7 +382,31 @@ public class Hintergrund extends JFrame
                         ioe.printStackTrace();
                     }
                     
-            
+                    //E Werk
+                    // Zink
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./E Werk.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,850,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
+                    
+                    //W Werk
+                    // Zink
+                    try
+                    {
+                        Image bag = ImageIO.read(getClass().getResource("./W Werk.jpeg"));
+                        bag = bag.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                        g.drawImage(bag,1180 ,900,this);
+                    }
+                    catch (java.io.IOException ioe)
+                    {
+                        ioe.printStackTrace();
+                    }
                 };
                 
             };
