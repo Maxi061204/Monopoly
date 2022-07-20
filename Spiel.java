@@ -80,6 +80,11 @@ public class Spiel
         
     }
 
+    public void lost(Spieler spieler){
+        System.out.println(spieler.name() + " hat verloren!");
+        System.exit(0);
+    }
+    
     public void send_to_prison(Spieler spieler){
         spieler.muss_aussetzen = 3;
         brett.send_to_prison(spieler);

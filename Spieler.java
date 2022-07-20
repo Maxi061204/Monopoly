@@ -57,30 +57,37 @@ public abstract class Spieler
         }
     }*/
     
-    public abstract boolean build_extension(Grundstück building, int price);
+    public boolean build_extension(Grundstück building, int price){
+        if(!can_afford(price)){return false;}
+        System.out.println("Wollen Sie für " + building.name() + " eine Erweiterung für "+ price + " bauen?");
+        if(do_action()){
+            zahlen(price);
+            return true;
+        }
+        return false;
+    }
     
    
     
-    public abstract void andere_aktionen();/*{
-        if(hypotheken.getFirst() == null){
-            System.out.println("Welches Objekt wollen Sie von einem anderen Spieler erwerben?");
-            Feld estate = get_estate();
-            estate.besitzer.angebot_unterbreiten(estate, get_fee(estate));
-        }
-        System.out.println("Möchten Sie");//not finished
-    }*/
+    public abstract void andere_aktionen();
     
     public void angebot_unterbreiten(Property angebot, int geld, Spieler wer){
         System.out.println("Wollen Sie " + angebot.name()+ " für " + geld + " verkaufen?");
         if(do_action()){
             wer.geld_überweisen(this, geld);
-            
+            besitz.remove(angebot);
+            wer.add_prop(angebot);
         }
     }
     
-    public abstract void zahlen(int preis);
     
-    public abstract boolean buy(Property prop);
+    
+    public boolean buy(Property prop){
+        if(!can_afford(prop.preis())){return false;}
+        System.out.println("Wollen Sie " + prop.name() + " für " + prop.preis() + " kaufen?");
+        if(do_action()){zahlen(prop.preis()); return true;}
+        return false;
+    }
     
     private void handeln(){
         Property prop = null;
@@ -101,6 +108,11 @@ public abstract class Spieler
         prop.set_besitzer(this);
     }
     
+    private void zahlen(int geld){
+        if(this.geld > geld){this.geld -= geld; return;}
+        int g = generate_wealth(geld - this.geld);
+        this.geld = this.geld - geld + g - geld; 
+    }
     
     public abstract int offer(Property prop);
     
@@ -137,27 +149,36 @@ public abstract class Spieler
         return null;
     }
     
-    public abstract void in_frei_parken_zahlen(int geld);
+    public void in_frei_parken_zahlen(int geld){
+        if(!can_afford(geld)){spiel.lost(this);}
+        int g = 0;
+        if(this.geld < geld){
+            g = generate_wealth(geld - this.geld);
+        }
+        this.geld =this.geld+ geld + g - geld;
+        spiel.in_frei_parken_zahlen(geld);
+    }
+    
+   
+    private int generate_wealth(int how_much){
+        int g = 0;
+        do{
+            String s = get_desired_property();
+            Property prop = get_prop(s);
+            if(prop == null){continue;}
+            this.geld += prop.hypothek_setzen();
+            besitz.remove(prop);
+            hypotheken.add(prop);
+        }while(g < how_much);
+        return g;
+    }
     
     public int geld(){return geld;}
     
     public void gefaengnis_frei(){++ gefaengnis_frei;}
     
-    public void handeln(Grundstück grundstück, Spieler p1, Spieler p2, int price){
     
     
-    }
     
-    public boolean handeln_consent_KW(Spieler wer, Feld wo, int wieviel){
-        String hatgefragt = wer.name;
-        String wojetzt = wo.name;
-        Console input = System.console();
-        System.out.println(hatgefragt +" will "+ wojetzt + " für " + wieviel + " kaufen. Akzeptierst du?");        
-        String s = input.readLine();
-        if(s.equals("ja")){
-          return true;
-        }
-        return false;
-    }
     
 }

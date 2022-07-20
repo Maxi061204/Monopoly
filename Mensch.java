@@ -28,9 +28,7 @@ public class Mensch extends Spieler
         return false;
     }
 
-    public boolean handeln_consent() {
-        return false;
-    }
+    
 
     public void geld_überweisen(Spieler spieler, int geld){}
 

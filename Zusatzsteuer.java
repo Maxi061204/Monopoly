@@ -14,7 +14,7 @@ public class Zusatzsteuer extends Feld {
 
     public void AktionAusfuehren(Spieler spieler){
 
-        spieler.zahlen(100);
+        spieler.in_frei_parken_zahlen(100);
         spiel.in_frei_parken_zahlen(100);
         System.out.println("Du bist auf Zusatzsteuer gelandet. Zahle 100$");
     }
