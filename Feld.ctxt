@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Feld
-comment0.text=\r\n\ Abstrakte\ Klasse\ Karte\ \r\n\ \r\n\ @author\ \r\n
+comment0.text=\n\ Abstrakte\ Klasse\ Karte\ \n\ \n\ @author\ \n
 comment1.params=spiel\ name
 comment1.target=Feld(Spiel,\ java.lang.String)
 comment2.params=spieler

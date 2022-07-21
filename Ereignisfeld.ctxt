@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Ereignisfeld
-comment0.text=\r\n\ Klasse\ Ereignisfeld.\r\n\ \ \r\n\ @author\ \r\n
+comment0.text=\n\ Klasse\ Ereignisfeld.\n\ \ \n\ @author\ \n
 comment1.params=spiel\ name
 comment1.target=Ereignisfeld(Spiel,\ java.lang.String)
 comment1.text=---------------Konstruktor---

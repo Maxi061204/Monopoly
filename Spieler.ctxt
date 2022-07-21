@@ -34,7 +34,7 @@ comment4.params=spieler\ geld
 comment4.target=void\ geld_\u00FCberweisen(Spieler,\ int)
 comment5.params=building\ price
 comment5.target=boolean\ build_extension(Grundst\u00FCck,\ int)
-comment5.text=public\ void\ aktion_uebergeben(int\ action_id){\ //F\u00FCr\ Felder\r\n\ \ \ \ \ \ \ \ //Einfach\ Geld\ geben\ oder\ \u00FCberweisen\ haben\ eigene\ Methoden(s.u.)\r\n\ \ \ \ \ \ \ \ switch(action_id){\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 1\:\ action_id\ \=\ 0;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //Geld\ zu\ frei\ parken\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 2\:\ action_id\ \=\ 1;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //anderem\ spieler\ geld\ \u00FCberweisen\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 3\:\ action_id\ \=\ 2;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //haus_hotel\ bauen?\r\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 4\:\ \r\n\ \ \ \ \ \ \ \ }\r\n}
+comment5.text=public\ void\ aktion_uebergeben(int\ action_id){\ //F\u00FCr\ Felder\n\ \ \ \ \ \ \ \ //Einfach\ Geld\ geben\ oder\ \u00FCberweisen\ haben\ eigene\ Methoden(s.u.)\n\ \ \ \ \ \ \ \ switch(action_id){\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 1\:\ action_id\ \=\ 0;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //Geld\ zu\ frei\ parken\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 2\:\ action_id\ \=\ 1;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //anderem\ spieler\ geld\ \u00FCberweisen\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 3\:\ action_id\ \=\ 2;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //haus_hotel\ bauen?\n\ \ \ \ \ \ \ \ \ \ \ \ case\ 4\:\ \n\ \ \ \ \ \ \ \ }\n}
 comment6.params=
 comment6.target=void\ andere_aktionen()
 comment7.params=angebot\ geld\ wer

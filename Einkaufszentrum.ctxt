@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Einkaufszentrum
-comment0.text=\r\n\ Klasse\ Einkaufszentrum.\r\n\ \ \r\n\ @author\ \r\n
+comment0.text=\n\ Klasse\ Einkaufszentrum.\n\ \ \n\ @author\ \n
 comment1.params=spiel\ name\ stra\u00DFe\ id
 comment1.target=Einkaufszentrum(Spiel,\ java.lang.String,\ Stra\u00DFe,\ int)
 comment1.text=---------------Konstruktor---
@@ -11,7 +11,7 @@ comment11.target=int\ mieteBerechnen()
 comment11.text=---------------Methoden------
 comment12.params=basis\ exponent
 comment12.target=int\ pow(int,\ int)
-comment12.text=\r\n\ \ \ \ \ \ \ 25\r\n\ \ \ \ \ \ \ 50\r\n\ \ \ \ \ \ \ 100\r\n
+comment12.text=\n\ \ \ \ \ \ \ 25\n\ \ \ \ \ \ \ 50\n\ \ \ \ \ \ \ 100\n
 comment2.params=
 comment2.target=boolean\ has_hypothek()
 comment3.params=

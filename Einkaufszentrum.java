@@ -45,7 +45,7 @@ public class Einkaufszentrum extends Property {
             }
         }
         else{
-            spieler.überweisen(besitzer, mieteBerechnen());
+            //spieler.überweisen(besitzer, mieteBerechnen());
         }
         }
         

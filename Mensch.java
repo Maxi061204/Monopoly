@@ -18,17 +18,22 @@ public class Mensch extends Spieler
     }
 
     public boolean handeln_consent_GS(Spieler wer, Grundstück wo, int wieviel){
-        String hatgefragt = wer.name;
+        //String hatgefragt = wer.name;
         String wojetzt = wo.strassenname;
         Console input = System.console();
-        System.out.println(hatgefragt+"will"+wojetzt+"für"+wieviel+"kaufen. Akzeptierst du?");        
+        System.out.println("will"+wojetzt+"für"+wieviel+"kaufen. Akzeptierst du?");        
         if(input.readLine().equals("ja")){
             return true;
         }
         return false;
     }
-
     
+    public String get_desired_property(){
+        return "FAILURE";
+    }
+    
+    
+     
 
     public void geld_überweisen(Spieler spieler, int geld){}
 
@@ -59,5 +64,9 @@ public class Mensch extends Spieler
     public int get_fee(Feld est){
         return -1;};
 
+    public int offer(Property p){
+        
+        return 1;
+    }
 
 }

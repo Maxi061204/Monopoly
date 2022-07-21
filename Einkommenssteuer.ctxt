@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Einkommenssteuer
-comment0.text=\r\n\ Klasse\ Einkommenssteuer.\r\n\ \ \r\n\ @author\ \r\n
+comment0.text=\n\ Klasse\ Einkommenssteuer.\n\ \ \n\ @author\ \n
 comment1.params=spiel\ name
 comment1.target=Einkommenssteuer(Spiel,\ java.lang.String)
 comment1.text=---------------Konstruktor---

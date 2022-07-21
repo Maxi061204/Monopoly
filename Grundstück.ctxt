@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Grundst\u00FCck
-comment0.text=\r\n\ Klasse\ Grundst\u00FCck.\r\n\ \ \r\n\ @author\ \r\n
+comment0.text=\n\ Klasse\ Grundst\u00FCck.\n\ \ \n\ @author\ \n
 comment1.params=grundst\u00FCckID\ spiel\ name\ s
 comment1.target=Grundst\u00FCck(int,\ Spiel,\ java.lang.String,\ Stra\u00DFe)
 comment1.text=---------------Konstruktor---

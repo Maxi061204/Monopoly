@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Kraftwerk
-comment0.text=\r\n\ Klasse\ Kraftwerk.\r\n\ \ \r\n\ @author\ \r\n
+comment0.text=\n\ Klasse\ Kraftwerk.\n\ \ \n\ @author\ \n
 comment1.params=spiel\ name\ id\ stra\u00DFe
 comment1.target=Kraftwerk(Spiel,\ java.lang.String,\ int,\ Stra\u00DFe)
 comment1.text=---------------Konstruktor---
